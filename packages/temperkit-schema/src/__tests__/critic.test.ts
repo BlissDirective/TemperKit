@@ -24,6 +24,16 @@ describe("scoreCritic", () => {
     expect(total).toBe(job.critic.overall);
   });
 
+  it("ships a complete brief with named colors even without a goal image", () => {
+    const job = forgeFromIngest({
+      url: "https://www.nocturne.paris",
+      description:
+        "Heritage navy perfume bottle with gold collar. Slow studio turntable, warm key, quiet luxury.",
+    });
+    expect(job.critic.overall).toBeGreaterThanOrEqual(CRITIC_THRESHOLD);
+    expect(job.critic.ship).toBe(true);
+  });
+
   it("scores higher when a goal image is present", () => {
     const base = {
       url: "https://www.nocturne.paris",

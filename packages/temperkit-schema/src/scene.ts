@@ -35,7 +35,7 @@ export function buildPedestalScene(
       scale: 1,
     },
     motion: {
-      turntableSpeed: 0.22,
+      turntableSpeed: 0.42,
       pointerTilt: 0.18,
     },
     lighting: {

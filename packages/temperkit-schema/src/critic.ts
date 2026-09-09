@@ -17,7 +17,7 @@ function round1(value: number): number {
 export function scoreCritic(input: IngestInput, scene: SceneSpec): CriticScore {
   const notes: string[] = ["Stub critic — heuristic only, not a vision model."];
 
-  let brandMatch = 11;
+  let brandMatch = 12;
   if (input.goalImage) {
     brandMatch += 6;
     notes.push("Goal image palette applied to materials and lighting.");
