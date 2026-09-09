@@ -14,7 +14,9 @@ function ProductMaterial({ spec }: { spec: SceneSpec }) {
       color={spec.product.color}
       metalness={spec.product.metallic}
       roughness={spec.product.roughness}
-      envMapIntensity={0.9}
+      envMapIntensity={1.1}
+      emissive={spec.product.color}
+      emissiveIntensity={0.12}
     />
   );
 }
@@ -37,9 +39,21 @@ function Bottle({ spec }: ProductProps) {
   }, []);
 
   return (
-    <mesh geometry={geometry} castShadow position={[0, 0, 0]}>
-      <ProductMaterial spec={spec} />
-    </mesh>
+    <group>
+      <mesh geometry={geometry} castShadow>
+        <ProductMaterial spec={spec} />
+      </mesh>
+      <mesh castShadow position={[0, 1.3, 0]}>
+        <cylinderGeometry args={[0.11, 0.09, 0.12, 32]} />
+        <meshStandardMaterial
+          color={spec.brand.colors.accent}
+          metalness={0.85}
+          roughness={0.22}
+          emissive={spec.brand.colors.accent}
+          emissiveIntensity={0.2}
+        />
+      </mesh>
+    </group>
   );
 }
 

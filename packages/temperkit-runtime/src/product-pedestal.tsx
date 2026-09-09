@@ -116,10 +116,7 @@ function PedestalRig({ spec }: { spec: SceneSpec }) {
 }
 
 function StudioLights({ spec }: { spec: SceneSpec }) {
-  const key = useMemo(
-    () => new Color(spec.brand.colors.primary),
-    [spec.brand.colors.primary],
-  );
+  const key = useMemo(() => new Color("#f4efe6"), []);
   const fill = useMemo(
     () => new Color(spec.brand.colors.muted),
     [spec.brand.colors.muted],
@@ -129,11 +126,7 @@ function StudioLights({ spec }: { spec: SceneSpec }) {
     <>
       <color attach="background" args={[spec.atmosphere.bgTop]} />
       <hemisphereLight
-        args={[
-          spec.atmosphere.bgTop,
-          spec.atmosphere.bgBottom,
-          spec.lighting.ambientIntensity,
-        ]}
+        args={[spec.brand.colors.text, spec.atmosphere.bgBottom, 0.65]}
       />
       <ambientLight
         intensity={spec.lighting.ambientIntensity}
@@ -154,9 +147,10 @@ function StudioLights({ spec }: { spec: SceneSpec }) {
         intensity={spec.lighting.fillIntensity}
         color={fill}
       />
+      <pointLight position={[0.4, 1.8, 3.2]} intensity={1.4} color="#fff6ea" />
       <pointLight
-        position={[0.2, 0.4, 2.4]}
-        intensity={0.55}
+        position={[0.2, 0.6, 2.4]}
+        intensity={0.85}
         color={spec.brand.colors.accent}
       />
     </>

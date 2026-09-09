@@ -39,10 +39,10 @@ export function buildPedestalScene(
       pointerTilt: 0.18,
     },
     lighting: {
-      exposure: 1.05,
-      keyIntensity: 2.4,
-      fillIntensity: 0.55,
-      ambientIntensity: 0.28,
+      exposure: 1.15,
+      keyIntensity: 3.4,
+      fillIntensity: 1.1,
+      ambientIntensity: 0.48,
     },
     atmosphere: {
       dustCount: input.goalImage ? dusty + 20 : dusty,
