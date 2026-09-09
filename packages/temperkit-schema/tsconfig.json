@@ -1,0 +1,9 @@
+{
+  "extends": "@temperkit/config/typescript/base.json",
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["vitest/globals"]
+  }
+}

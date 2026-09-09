@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --color-ink: #0b0b0c;
+  --color-ink-soft: #141311;
+  --color-paper: #f4f1ea;
+  --color-muted: #9a958a;
+  --color-line: #2a2723;
+  --color-copper: #e8a87c;
+  --color-ember: #c45c26;
+  --color-ok: #8fca8a;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+body {
+  background-image:
+    radial-gradient(
+      1200px 500px at 80% -10%,
+      rgb(196 92 38 / 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 420px at -10% 110%,
+      rgb(232 168 124 / 0.08),
+      transparent 55%
+    );
+}
+
+::selection {
+  background: var(--color-copper);
+  color: var(--color-ink);
+}
+
+@utility tk-ring {
+  border: 1px solid var(--color-line);
+  background: rgb(20 19 17 / 0.72);
+  backdrop-filter: blur(16px);
+}
