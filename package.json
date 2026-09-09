@@ -1,0 +1,37 @@
+{
+  "name": "temperkit",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Brand-matched animated web components from a URL, goal image, and description.",
+  "packageManager": "pnpm@10.33.3",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "turbo": "^2.5.8",
+    "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@biomejs/biome"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "expo",
+        "expo-asset",
+        "expo-file-system",
+        "expo-gl",
+        "react-native"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@temperkit/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "lint": "biome check .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@temperkit/runtime": "workspace:*",
+    "@temperkit/schema": "workspace:*",
+    "lucide-react": "^0.511.0",
+    "next": "^15.5.25",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@temperkit/config": "workspace:*",
+    "@types/node": "^22.15.21",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
